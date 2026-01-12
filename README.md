@@ -14,7 +14,7 @@ Ikuti langkah-langkah berikut agar project dapat berjalan di komputer Anda.
 1.  **Clone Repository**
     Download source code project ini:
     ```bash
-    git clone https://github.com/Mohmedalfin/manajemen-gaji-sales.git
+    git clone https://github.com/Mohmedalfin/project_payroll_joki.git
     cd nama-repo-anda
     ```
 
@@ -38,14 +38,9 @@ Ikuti langkah-langkah berikut agar project dapat berjalan di komputer Anda.
         DB_CONNECTION=mysql
         DB_HOST=127.0.0.1
         DB_PORT=3306
-        DB_DATABASE=nama_database_kamu
+        DB_DATABASE=nama_database_baru(bebas namanya)
         DB_USERNAME=root
         DB_PASSWORD=
-        ```
-    * **WhatsApp Gateway:** (Sesuaikan dengan provider API yang digunakan)
-        ```env
-        WA_API_URL=[https://api.whatsapp.com/send](https://api.whatsapp.com/send)
-        WA_API_KEY=your_api_key_here
         ```
 
 5.  **Generate Application Key**
@@ -57,7 +52,9 @@ Ikuti langkah-langkah berikut agar project dapat berjalan di komputer Anda.
 6.  **Migrasi Database & Seeder**
     Jalankan perintah ini untuk membuat tabel dan mengisi data akun Admin default:
     ```bash
-    php artisan db:seed --class=Userseed
+    php artisan db:seed --class=JabatanSeeder
+    php artisan db:seed --class=KaryawanSeeder
+    php artisan db:seed --class=PenggunaSeed
     ```
 
 7.  **Setup Storage Link**
@@ -89,16 +86,6 @@ Gunakan akun ini untuk login pertama kali setelah menjalankan seeder:
 
 | Role | Username / Email | Password |
 | :--- | :--- | :--- |
-| **Admin** | `admin` | `password` |
-| Login **Sales** mengikuti sales yang dibuat |
+| **Admin** | `Tachwin` | `pass123` |
 
 ---
-
-## 🤝 Kontribusi
-
-Project ini adalah Open Source. Jika ingin berkontribusi:
-1.  Fork repository ini.
-2.  Buat branch fitur (`git checkout -b fitur-baru`).
-3.  Commit perubahan (`git commit -m 'Menambahkan fitur keren'`).
-4.  Push ke branch (`git push origin fitur-baru`).
-5.  Buat Pull Request.
