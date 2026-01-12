@@ -5,12 +5,23 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class KaryawanSeeder extends Seeder
+class KaryawanSeeder extends Seeder // <--- Pastikan namanya KaryawanSeeder (sesuai nama file)
 {
     public function run()
     {
+        // 1. Matikan Foreign Key Check sebentar untuk Truncate
+        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
+        
+        // 2. Kosongkan tabel & Reset ID ke 1
+        DB::table('karyawan')->truncate();
+        
+        // 3. Hidupkan kembali Foreign Key Check
+        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
+
+        // 4. Insert Data
         DB::table('karyawan')->insert([
             [
+                'id'            => 1,
                 'jabatan_id'    => 1,
                 'nama_karyawan' => 'Diah Ratri',
                 'jenis_kelamin' => 'Perempuan',
@@ -21,6 +32,7 @@ class KaryawanSeeder extends Seeder
                 'updated_at'    => now(),
             ],
             [
+                'id'            => 2,
                 'jabatan_id'    => 2,
                 'nama_karyawan' => 'Ratna Dewi',
                 'jenis_kelamin' => 'Perempuan',
@@ -31,6 +43,7 @@ class KaryawanSeeder extends Seeder
                 'updated_at'    => now(),
             ],
             [
+                'id'            => 3,
                 'jabatan_id'    => 3,
                 'nama_karyawan' => 'Sulistyani',
                 'jenis_kelamin' => 'Perempuan',
@@ -41,6 +54,7 @@ class KaryawanSeeder extends Seeder
                 'updated_at'    => now(),
             ],
             [
+                'id'            => 4,
                 'jabatan_id'    => 3,
                 'nama_karyawan' => 'Maryam',
                 'jenis_kelamin' => 'Perempuan',
@@ -51,6 +65,7 @@ class KaryawanSeeder extends Seeder
                 'updated_at'    => now(),
             ],
             [
+                'id'            => 5,
                 'jabatan_id'    => 4,
                 'nama_karyawan' => 'Naufal',
                 'jenis_kelamin' => 'Laki-laki',
@@ -61,6 +76,7 @@ class KaryawanSeeder extends Seeder
                 'updated_at'    => now(),
             ],
             [
+                'id'            => 6,
                 'jabatan_id'    => 4,
                 'nama_karyawan' => 'Wawan',
                 'jenis_kelamin' => 'Laki-laki',
@@ -71,6 +87,7 @@ class KaryawanSeeder extends Seeder
                 'updated_at'    => now(),
             ],
             [
+                'id'            => 7,
                 'jabatan_id'    => 4,
                 'nama_karyawan' => 'Bagas',
                 'jenis_kelamin' => 'Laki-laki',
@@ -81,6 +98,7 @@ class KaryawanSeeder extends Seeder
                 'updated_at'    => now(),
             ],
             [
+                'id'            => 8,
                 'jabatan_id'    => 4,
                 'nama_karyawan' => 'Yuni',
                 'jenis_kelamin' => 'Perempuan',
@@ -91,6 +109,7 @@ class KaryawanSeeder extends Seeder
                 'updated_at'    => now(),
             ],
             [
+                'id'            => 9,
                 'jabatan_id'    => 4,
                 'nama_karyawan' => 'Ahmad',
                 'jenis_kelamin' => 'Laki-laki',
@@ -101,6 +120,7 @@ class KaryawanSeeder extends Seeder
                 'updated_at'    => now(),
             ],
             [
+                'id'            => 10,
                 'jabatan_id'    => 4,
                 'nama_karyawan' => 'Budi',
                 'jenis_kelamin' => 'Laki-laki',
@@ -111,6 +131,7 @@ class KaryawanSeeder extends Seeder
                 'updated_at'    => now(),
             ],
             [
+                'id'            => 11,
                 'jabatan_id'    => 5,
                 'nama_karyawan' => 'Tachwin',
                 'jenis_kelamin' => 'Laki-laki',
